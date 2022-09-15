@@ -18,7 +18,7 @@ export default (state = initialState, action: DashboardActions) => {
             return {
                 ...state,
                 pending: false,
-                todos: action.payload.person,
+                person: action.payload.person,
                 error: null,
             };
         default:

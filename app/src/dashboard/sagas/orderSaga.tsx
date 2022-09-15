@@ -1,20 +1,27 @@
 import axios from "axios";
 import { all, call, put, takeLatest } from "redux-saga/effects";
-import { IOrder } from "../types";
+import { IOrders } from "../types";
 import {
     fetchOrderSuccess
 } from "../actions";
 import { dashboardTypes } from "../actionTypes";
 
-const getOrder = () =>
-    axios.get<IOrder[]>("https://evoteam-verasoft.github.io/data/orders.json");
-
+const getOrder = () =>{
+    let response = axios.get("https://evoteam-verasoft.github.io/data/orders.json");
+    return response.then((response) => response.data)
+}
 function* fetchOrderSaga() {
     try {
-        const response = yield call(getOrder);
+        const response: IOrders = yield call(getOrder);
+        // let orders;
+        // for(let key in response){
+        //     orders[key] = response
+        //     console.log(response[key])
+        // }
+        // console.log(response)
         yield put(
             fetchOrderSuccess({
-                orders: response.data
+                orders: response
             })
         );
     } catch (e) {

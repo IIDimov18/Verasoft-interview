@@ -1,10 +1,17 @@
 import {dashboardTypes} from "../actionTypes";
 
-import {DashboardActions, OrderState} from "../types";
+import {DashboardActions, IOrder, OrderState} from "../types";
 
 const initialState: OrderState = {
     pending: false,
-    orders: [],
+
+    orders:{
+        "orders_A" : {sent: []},
+        "orders_AA" :{sent: []},
+        "orders_AAA" : {sent: []},
+        "orders_B" : {sent: []},
+        "orders_C" : {sent: []},
+    }
 };
 
 export default (state = initialState, action: DashboardActions) => {
@@ -18,8 +25,8 @@ export default (state = initialState, action: DashboardActions) => {
             return {
                 ...state,
                 pending: false,
-                todos: [],
-                error: action.payload.orders,
+                orders: action.payload.orders,
+                error: null
             };
         default:
             return {

@@ -21,6 +21,7 @@ export interface IPerson {
         status: string
     };
 }
+
 export interface IOrder {
     id: number;
     order_id:number;
@@ -33,6 +34,19 @@ export interface IOrder {
     type:string;
 }
 
+export interface IOrders{
+    "orders_A" : {sent: IOrder[]},
+    "orders_AA" :{sent: IOrder[]},
+    "orders_AAA" : {sent: IOrder[]},
+    "orders_B" : {sent: IOrder[]},
+    "orders_C" : {sent: IOrder[]},
+}
+
+export type LoadingScreenType = {
+    isVisible: boolean;
+    functionality: Function;
+}
+
 export interface PersonState {
     pending: boolean;
     person: IPerson[];
@@ -40,14 +54,14 @@ export interface PersonState {
 
 export interface OrderState {
     pending: boolean;
-    orders: IOrder[];
+    orders:IOrders
 }
 
 export interface FetchPersonSuccessPayload {
     person: IPerson;
 }
 export interface FetchOrderSuccessPayload {
-    orders: IOrder[];
+    orders:IOrders;
 }
 
 

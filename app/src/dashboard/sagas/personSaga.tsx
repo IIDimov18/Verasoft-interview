@@ -6,15 +6,18 @@ import {
 } from "../actions";
 import { dashboardTypes } from "../actionTypes";
 
-const getPerson = () =>
-    axios.get<IPerson[]>("https://evoteam-verasoft.github.io/data/summary.json");
+const getPerson = () =>{
+    let response = axios.get("https://evoteam-verasoft.github.io/data/summary.json")
 
+    return response.then((response) => response.data)
+
+}
 function* fetchPersonSaga() {
     try {
-        const response = yield call(getPerson);
+        const response:IPerson = yield call(getPerson);
         yield put(
             fetchPersonSuccess({
-                person: response.data
+                person: response
             })
         );
     } catch (e) {
