@@ -315,7 +315,6 @@ code {
 
 }
 .order-description-hr{
-  margin-left: 15px;
   width: 1135px;
   margin-top:4px;
   height: 0px;
@@ -328,6 +327,8 @@ code {
 .order{
   margin-left:15px;
   display:flex;
+  width: 1137px;
+  height: 70px;
   .order-date{
     width:58px+83px;
     overflow:hidden;
@@ -394,6 +395,8 @@ code {
   }
 }
 .order-list-hr{
+  margin-top:0px;
+  margin-bottom: 0px;
   margin-left: 15px;
   width: 1135px;
   height: 0px;
@@ -547,4 +550,7 @@ code {
     opacity: 0.1;
     transform: translateY(-16px);
   }
+}
+.order-dark{
+  background: #F2F4F7;
 }
