@@ -9,23 +9,10 @@ import orderSaga from "./dashboard/sagas/orderSaga";
 import {IPerson} from "./dashboard/types";
 
 function App() {
-    // const dispatch = useDispatch();
-    //
-    // const {pending, orders } = useSelector(
-    //     (state: RootState) => state.order
-    // );
-    //
-    // useEffect(() => {
-    //     dispatch(fetchOrderRequest());
-    // }, []);
-    // console.log(orders);
+
   return (
     <div className="App">
           <Header />
-        {/*{orders && orders.map(order =>*/}
-        {/*    <div id={key}></div>*/}
-        {/*    <h1>{order.sent}</h1>*/}
-        {/*)}*/}
            <hr className="header-line"></hr>
           <Dashboard />
         <Orders />

@@ -10,8 +10,6 @@ const Orders = () => {
     const {pending, orders } = useSelector(
         (state: RootState) => state.order
     );
-
-
     useEffect(() => {
         dispatch(fetchOrderRequest());
     }, []);
@@ -73,7 +71,7 @@ const Orders = () => {
             <div className="order-header">
                 <button className={`sent ${!errorTab?"orders-active" : ""}`} onClick={() =>setErrorTab(false)}>SENT</button>
 
-                <button className={`errors ${errorTab?"orders-active" : ""}`} onClick={() =>{setErrorTab(true);changeTab(-1);}}>ERRORS</button>
+                <button className={`errors ${errorTab?"orders-active" : ""}`} onClick={() =>{setErrorTab(true);}}>ERRORS</button>
                 <text className="order-header-text">RECENT ORDERS</text>
             </div>
 
@@ -112,7 +110,7 @@ const Orders = () => {
                             </>
                         )})
                     : <div className="ErrorTab"><div className="no-item"><text>No Items</text></div></div>}
-                {tabs[1]=='inactive'?null:
+                {errorTab?"":tabs[1]=='inactive'?null:
                     orders.orders_AA.sent!=undefined?
                         orders.orders_AA.sent.map(value => {
                             return(
@@ -146,7 +144,7 @@ const Orders = () => {
                                 </>
                             )})
                         : <div className="ErrorTab"><div className="no-item"><text>No Items</text></div></div>}
-                {tabs[2]=='inactive'?null:
+                {errorTab?"":tabs[2]=='inactive'?null:
                     orders.orders_AAA.sent!=undefined?
                         orders.orders_AAA.sent.map(value => {
                             return(
@@ -180,7 +178,7 @@ const Orders = () => {
                                 </>
                             )})
                         : <div className="ErrorTab"><div className="no-item"><text>No Items</text></div></div>}
-                {tabs[3]=='inactive'?null:
+                {errorTab?"":tabs[3]=='inactive'?null:
                     orders.orders_B.sent!=undefined?
                         orders.orders_B.sent.map(value => {
                             return(
@@ -214,7 +212,7 @@ const Orders = () => {
                                 </>
                             )})
                         : <div className="ErrorTab"><div className="no-item"><text>No Items</text></div></div>}
-                {tabs[4]=='inactive'?null:
+                {errorTab?"":tabs[4]=='inactive'?null:
                     orders.orders_C.sent!=undefined?
 
                         orders.orders_C.sent.map(value => {
