@@ -33,14 +33,14 @@ export interface IOrder {
     };
     type:string;
 }
+export interface IOrderModifier{
+    id:number,
+    key:string,
+    sent:IOrder[]
 
-export interface IOrders{
-    "orders_A" : {sent: IOrder[]},
-    "orders_AA" :{sent: IOrder[]},
-    "orders_AAA" : {sent: IOrder[]},
-    "orders_B" : {sent: IOrder[]},
-    "orders_C" : {sent: IOrder[]},
 }
+
+export type IOrders = IOrderModifier[]
 
 export type LoadingScreenType = {
     isVisible: boolean;

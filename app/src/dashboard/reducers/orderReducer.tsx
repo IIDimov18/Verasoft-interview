@@ -5,13 +5,7 @@ import {DashboardActions, IOrder, OrderState} from "../types";
 const initialState: OrderState = {
     pending: false,
 
-    orders:{
-        "orders_A" : {sent: []},
-        "orders_AA" :{sent: []},
-        "orders_AAA" : {sent: []},
-        "orders_B" : {sent: []},
-        "orders_C" : {sent: []},
-    }
+    orders: []
 };
 
 export default (state = initialState, action: DashboardActions) => {

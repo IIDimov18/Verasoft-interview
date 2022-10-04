@@ -329,7 +329,9 @@ code {
   display:flex;
   width: 1137px;
   height: 70px;
+  align-items: center;
   .order-date{
+    align-items:center;
     width:58px+83px;
     overflow:hidden;
     text-overflow:ellipsis;
@@ -338,7 +340,6 @@ code {
       display:block;
     }
     text:first-of-type{
-      margin-top:12px;
       margin-bottom:6px;
       font-size: 16px;
     }
@@ -354,7 +355,6 @@ code {
       display:block;
     }
     text:first-of-type{
-      margin-top:12px;
       margin-bottom:6px;
       font-size: 16px;
     }
@@ -372,7 +372,6 @@ code {
   }
   .order-number{
     font-size:14px;
-    margin-top:26px;
     width:64px+127px;
     overflow:hidden;
     text-overflow:ellipsis;
@@ -387,7 +386,6 @@ code {
     color: $white-color;
     background-color: $recent-orders-resend-button-bg;
     font-weight: 400;
-    margin-top: 21px;
     cursor: pointer;
     &:hover {
       background-color: $recent-orders-resend-button-bg-hover;
