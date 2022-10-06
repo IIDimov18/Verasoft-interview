@@ -291,26 +291,30 @@ code {
 }
 .order-description{
   width: 1135px;
-  height: 24px;
   border-bottom: 1px $recent-orders-categories-border;
   vertical-align: middle;
   line-height: 24px;
   margin-left: 15px;
+  .order-description-container{
+    display:flex;
+    white-space: nowrap;
+  }
   text{
     color: $recent-orders-caategories-text;
     font-size: 10px;
   }
   #order-description-data{
     margin-left:10px;
+    width: 141px;
   }
   #order-description-subject{
-    margin-left:83px;
+    width: 447px;
   }
   #order-description-communication{
-    margin-left:410px;
+    width: 220px;
   }
   #order-description-order{
-    margin-left:113px;
+    width: 191px;
   }
 
 }
